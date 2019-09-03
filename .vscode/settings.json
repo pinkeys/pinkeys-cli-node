@@ -1,0 +1,10 @@
+{
+  "workbench.colorCustomizations": {
+    "activityBar.background": "#5B0B30",
+    "titleBar.activeBackground": "#800F44",
+    "titleBar.activeForeground": "#FFFCFD"
+  },
+  "cSpell.words": [
+    "pinkeys"
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "name": "pinkeys",
+  "version": "1.0.0",
+  "description": "Command Line tool to interact with PINKEYS",
+  "main": "app.js",
+  "bin": {
+    "@code4keys/pinkeys": "./app.js",
+    "pinkeys": "./app.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pinkeys/pinkeys-cli-node.git"
+  },
+  "keywords": [
+    "ssh",
+    "rsa",
+    "pgp",
+    "keys"
+  ],
+  "author": "code4keys",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pinkeys/pinkeys-cli-node/issues"
+  },
+  "homepage": "https://github.com/pinkeys/pinkeys-cli-node#readme",
+  "dependencies": {
+    "chalk": "^2.4.2",
+    "figlet": "^1.2.4",
+    "inquirer": "^7.0.0",
+    "request": "^2.88.0"
+  }
+}
