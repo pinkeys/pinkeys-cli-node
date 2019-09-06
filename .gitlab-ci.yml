@@ -17,7 +17,7 @@ test:lint:
 
 test:vulnerabilities:
   script:
-    - npm run vuln-test
+    - npm audit
 
 # Supported node versions can be found here:
 # https://github.com/nodejs/LTS#lts_schedule

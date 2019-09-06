@@ -10,9 +10,9 @@ module.exports = {
           message: 'Enter username',
           validate: function (value) {
             if (value.length && value.length >= 5) {
-              return true;
+              return true
             } else {
-              return `Please enter the name of the PinKeys' user to lookup`;
+              return 'Please enter the name of the PinKeys\' user to lookup'
             }
           }
         },
@@ -23,14 +23,14 @@ module.exports = {
           choices: ['rsa', 'pgp', 'ssh'],
           validate: function (value) {
             if (value.length && value.length >= 5) {
-              return true;
+              return true
             } else {
-              return `Please enter the name of the PinKeys' user to lookup`;
+              return 'Please enter the name of the PinKeys\' user to lookup'
             }
           }
         }
 
       ]
-    return inquirer.prompt(questions);
+    return inquirer.prompt(questions)
   }
-};
+}
