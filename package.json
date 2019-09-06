@@ -1,6 +1,6 @@
 {
   "name": "pinkeys",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Command Line tool to interact with PINKEYS",
   "main": "app.js",
   "bin": {
@@ -9,7 +9,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified for now.  It will exit 1 next time.\" && exit 0",
-    "lint": "slint app.js pinkeys-questions.js"
+    "lint": "eslint app.js pinkeys-questions.js"
   },
   "repository": {
     "type": "git",
