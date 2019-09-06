@@ -5,6 +5,10 @@ image: node:10
 before_script:
   - npm install
 
+stages:
+  - build
+  - deploy
+
 # This folder is cached between builds
 # http://docs.gitlab.com/ce/ci/yaml/README.html#cache
 cache:
@@ -12,11 +16,13 @@ cache:
     - node_modules/
 
 test:lint:
+  stage: build
   script:
     - npm install --dev
     - npm run lint
 
 test:vulnerabilities:
+  stage: build
   script:
     - npm audit
 
@@ -25,12 +31,14 @@ test:vulnerabilities:
 # jest does not support node < 4
 # https://facebook.github.io/jest/docs/troubleshooting.html#compatibility-issues
 test:node:10:
+  stage: build
   image: node:10
   script:
     - npm install -g codecov
     - npm test && codecov
 
 test:node:8:
+  stage: build
   image: node:8
   script:
     # - npm run build
@@ -40,10 +48,12 @@ test:node:8:
 # Publish tagged versions to npm
 publish:
   stage: deploy
-  only:
-    - tags
-    - triggers
   script:
     # - npm run build
     - echo '//registry.npmjs.org/:_authToken=${NPM_TOKEN}'>.npmrc
     - npm publish
+  environment:
+    name: production
+    url: https://https://www.npmjs.com/package/pinkeys
+  only:
+  - master
