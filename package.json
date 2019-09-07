@@ -9,7 +9,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified for now.  It will exit 1 next time.\" && exit 0",
-    "lint": "eslint app.js pinkeys-questions.js"
+    "lint": "eslint app.js pinkeys-questions.js",
+    "postversion": "git push --follow-tags"
   },
   "repository": {
     "type": "git",

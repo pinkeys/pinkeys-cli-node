@@ -56,4 +56,6 @@ publish:
     name: production
     url: https://https://www.npmjs.com/package/pinkeys
   only:
-  - master
+  # - master
+    - tags
+    - triggers
