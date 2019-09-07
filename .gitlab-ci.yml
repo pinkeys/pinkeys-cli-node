@@ -51,11 +51,11 @@ publish:
   image: node:10
   script:
     # - npm run build
-    - echo '//registry.npmjs.org/:_authToken=${NPM_TOKEN}'>.npmrc
+    - npm config set '//registry.npmjs.org/:_authToken' "${NPM_TOKEN}"
     - npm publish
   environment:
     name: production
-    url: https://https://www.npmjs.com/package/pinkeys
+    url: https://www.npmjs.com/package/pinkeys
   only:
   # - master
     - tags
