@@ -1,6 +1,6 @@
 {
   "name": "pinkeys",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Command Line tool to interact with PINKEYS",
   "main": "app.js",
   "bin": {
