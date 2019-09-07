@@ -4,9 +4,21 @@
 
 PINKEYS Command Line Interface for NPM/Node
 
-## Usage
+## Deployment
+``` bash
+npm install -g pinkeys
+```
+
+## Developers
 
 ``` bash
 npm install
 node app.js
+```
 
+## Maintainers
+
+Commit and push your changes.  Once merge into master our mantainers run to publish in NPM.
+``` bash
+npm version
+```
