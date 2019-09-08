@@ -51,7 +51,8 @@ publish:
   image: node:10
   script:
     # - npm run build
-    - npm config set '//registry.npmjs.org/:_authToken' "${NPM_TOKEN}"
+    - rm -f ./.npmrc
+    - echo '//registry.npmjs.org/:_authToken=${NPM_TOKEN}'>.npmrc
     - npm publish
   environment:
     name: production
