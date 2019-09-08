@@ -30,13 +30,6 @@ test:vulnerabilities:
 # https://github.com/nodejs/LTS#lts_schedule
 # jest does not support node < 4
 # https://facebook.github.io/jest/docs/troubleshooting.html#compatibility-issues
-test:node:10:
-  stage: build
-  image: node:10
-  script:
-    - npm install -g codecov
-    - npm test && codecov
-
 test:node:8:
   stage: build
   image: node:8
@@ -44,20 +37,24 @@ test:node:8:
     # - npm run build
     - npm test
 
+test:node:10:
+  stage: build
+  image: node:10
+  script:
+    - npm install -g codecov
+    - npm test && codecov
 
 # Publish tagged versions to npm
 publish:
   stage: deploy
   image: node:10
   script:
-    # - npm run build
-    - rm -f ./.npmrc
     - echo '//registry.npmjs.org/:_authToken=${NPM_TOKEN}'>.npmrc
+    - npm install
     - npm publish
   environment:
     name: production
     url: https://www.npmjs.com/package/pinkeys
   only:
-  # - master
     - tags
     - triggers
