@@ -18,7 +18,7 @@ node app.js
 
 ## Maintainers
 
-Commit and push your changes.  Once merge into master our mantainers run to publish in NPM.
+Commit changes then run the following to publish in NPM.
 ``` bash
 npm version
 ```
