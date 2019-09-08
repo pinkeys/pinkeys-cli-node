@@ -49,13 +49,13 @@ publish:
   stage: deploy
   image: node:10
   script:
-    - npm set global=false
     - echo '//registry.npmjs.org/:_authToken=${NPM_TOKEN}'>.npmrc
-    - npm install
     - npm publish
   environment:
     name: production
     url: https://www.npmjs.com/package/pinkeys
+  variables:
+    NPM_TOKEN: $NPM_TOKEN
   only:
     - tags
     - triggers
