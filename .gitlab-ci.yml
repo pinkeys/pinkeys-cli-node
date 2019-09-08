@@ -49,6 +49,7 @@ publish:
   stage: deploy
   image: node:10
   script:
+    - npm set global=false
     - echo '//registry.npmjs.org/:_authToken=${NPM_TOKEN}'>.npmrc
     - npm install
     - npm publish
